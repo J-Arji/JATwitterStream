@@ -7,5 +7,9 @@
 
 import Foundation
 final class RepositoriesDependencyContainer {
-
+    private let client: APIClient
+    
+    init(client: APIClient = APIClientImp()) {
+        self.client = client
+    }
 }

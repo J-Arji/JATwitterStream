@@ -2,10 +2,10 @@
  platform :ios, '12.0'
 
 target 'TwitterStream' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for TwitterStream
   pod 'Alamofire'
-
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end
