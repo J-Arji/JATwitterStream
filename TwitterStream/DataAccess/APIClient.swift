@@ -12,7 +12,6 @@ protocol APIClient {
     func request<T: Codable>(_ endpoint: URLRequestConvertible) -> Observable<T>
 }
 
-
 class APIClientImp: APIClient {
     
     // MARK: Properties
@@ -32,15 +31,13 @@ class APIClientImp: APIClient {
     }
     
     private func cancelTask() {
-        AF.session.getAllTasks { (tasks) in
-            tasks.forEach {$0.cancel() }
-        }
+        sessionManager.cancelAllRequests()
     }
     
     
     func request<T: Codable>(_ endpoint: URLRequestConvertible) -> Observable<T>{
         if !isConnectOnEthernetOrWiFi {
-            //            return Observable.error(ClientError.noNetworkConnectivity)
+            return Observable.error(ClientError.noNetworkConnectivity)
         }
         
         return  Observable<T>.create { [unowned self] observer -> Disposable in
@@ -48,11 +45,11 @@ class APIClientImp: APIClient {
             request
                 .validate()
                 .cURLDescription {
-                    #if DEBUG
+#if DEBUG
                     debugPrint("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
                     print($0)
                     debugPrint("-----------------------------------------------------------")
-                    #endif
+#endif
                 }
                 .responseStreamDecodable(of: T.self) { stream in
                     switch stream.event {
@@ -63,7 +60,7 @@ class APIClientImp: APIClient {
                             observer.onNext(value)
                         case let .failure(error):
                             print(error)
-                            observer.onError(ClientError.unKnownError(detail: error.errorDescription ?? "error occurred"))
+                            observer.onError(ClientError.custom(detail: error.errorDescription ?? "error occurred"))
                         }
                     case let .complete(completion):
                         print(completion)
@@ -77,12 +74,39 @@ class APIClientImp: APIClient {
     }
 }
 
+
+/** `NVError` is the error type result returned by App. It encompasses a few different types of errors, each with their own associated reasons.
+ 
+ - noNetworkConnectivity:  When error not found network conection
+ - connectionTimeout: when error did not take long time respone
+ - parser:   When error occurs while parsing data
+ - custom:   When error doesn't fall in either of the above error type
+ */
+
 enum ClientError: Error {
     
     typealias RawValue = String
     
     case noNetworkConnectivity
-    case decodeJsonError
+    case parser(detail: String)
     case connectionTimeout
-    case unKnownError(detail: String)
+    case custom(detail: String)
 }
+extension ClientError {
+    var description: String {
+        switch self {
+        case .noNetworkConnectivity:
+            return "no network connectivity"
+            
+        case .connectionTimeout:
+            return "connection Timeout"
+            
+        case let .parser(detail):
+            return detail
+            
+        case let .custom( detail):
+            return detail
+        }
+    }
+}
+
