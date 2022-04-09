@@ -6,13 +6,14 @@
 //
 
 import Alamofire
-import RxSwift
 
 protocol APIClient {
-    func request<T: Codable>(_ endpoint: URLRequestConvertible) -> Observable<T>
+    func request<T>(_: URLRequestConvertible, completion: @escaping (Result<T, ClientError>) -> Void) where T: Decodable, T: Encodable
+    func requestStream<T>(_: URLRequestConvertible, completion: @escaping (Result<T, ClientError>) -> Void) where T: Decodable, T: Encodable
 }
 
 class APIClientImp: APIClient {
+  
     
     // MARK: Properties
     private let sessionManager: Session
@@ -23,9 +24,8 @@ class APIClientImp: APIClient {
     // MARK: Lifecycle
     required init() {
         let config = URLSessionConfiguration.af.default
-        config.timeoutIntervalForRequest = 15
-        config.timeoutIntervalForResource = 15
-        config.headers = .default
+        config.timeoutIntervalForRequest = 30
+        config.timeoutIntervalForResource = 30
         let sessionManager = Session(configuration: config)
         self.sessionManager = sessionManager
     }
@@ -35,78 +35,62 @@ class APIClientImp: APIClient {
     }
     
     
-    func request<T: Codable>(_ endpoint: URLRequestConvertible) -> Observable<T>{
-        if !isConnectOnEthernetOrWiFi {
-            return Observable.error(ClientError.noNetworkConnectivity)
+    
+    func request<T: Codable>(_ endpoint: URLRequestConvertible, completion: @escaping (Result<T, ClientError>) -> Void) {
+        guard let urlRequest = try? endpoint.asURLRequest() else {
+            completion(.failure(ClientError.custom(detail: "have problem")))
+            return
         }
-        
-        return  Observable<T>.create { [unowned self] observer -> Disposable in
-            let request = self.sessionManager.streamRequest(endpoint)
-            request
-                .validate()
-                .cURLDescription {
-#if DEBUG
-                    debugPrint("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-                    print($0)
-                    debugPrint("-----------------------------------------------------------")
-#endif
-                }
-                .responseStreamDecodable(of: T.self) { stream in
-                    switch stream.event {
-                    case let .stream(result):
-                        switch result {
-                        case let .success(value):
-                            print(value)
-                            observer.onNext(value)
-                        case let .failure(error):
-                            print(error)
-                            observer.onError(ClientError.custom(detail: error.errorDescription ?? "error occurred"))
-                        }
-                    case let .complete(completion):
-                        print(completion)
-                    }
-                    
-                }
-            return Disposables.create {
-                request.cancel()
+        let request = sessionManager.request(urlRequest)
+
+        request
+            .validate()
+            .cURLDescription {
+                debugPrint("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+                print($0)
+                debugPrint("-----------------------------------------------------------")
             }
-        }
+            .responseDecodable(of: T.self) { response in
+                switch response.result {
+                case let .success(model):
+                    completion(.success(model))
+                case let .failure(error):
+                    print(error.localizedDescription)
+                    completion(.failure(ClientError.parser(detail: error.localizedDescription)))
+                }
+            }
+
     }
-}
-
-
-/** `NVError` is the error type result returned by App. It encompasses a few different types of errors, each with their own associated reasons.
- 
- - noNetworkConnectivity:  When error not found network conection
- - connectionTimeout: when error did not take long time respone
- - parser:   When error occurs while parsing data
- - custom:   When error doesn't fall in either of the above error type
- */
-
-enum ClientError: Error {
     
-    typealias RawValue = String
-    
-    case noNetworkConnectivity
-    case parser(detail: String)
-    case connectionTimeout
-    case custom(detail: String)
-}
-extension ClientError {
-    var description: String {
-        switch self {
-        case .noNetworkConnectivity:
-            return "no network connectivity"
-            
-        case .connectionTimeout:
-            return "connection Timeout"
-            
-        case let .parser(detail):
-            return detail
-            
-        case let .custom( detail):
-            return detail
+    func requestStream<T>(_ endpoint: URLRequestConvertible, completion: @escaping (Result<T, ClientError>) -> Void) where T : Decodable, T : Encodable {
+        if !isConnectOnEthernetOrWiFi {
+            completion(.failure(ClientError.noNetworkConnectivity))
         }
+        cancelTask()
+        
+        self.sessionManager.streamRequest(endpoint)
+            .validate()
+            .cURLDescription {
+                debugPrint("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+                print($0)
+                debugPrint("-----------------------------------------------------------")
+            }
+        
+            .responseStreamDecodable(of: T.self) { stream in
+                switch stream.event {
+                case let .stream(result):
+                    switch result {
+                    case let .success(value):
+                        completion(.success(value))
+
+                    case let .failure(error):
+                        completion(.failure(ClientError.custom(detail: error.localizedDescription)))
+
+                    }
+                case let .complete(completion):
+                    print(completion)                    
+                }
+            }
     }
 }
 

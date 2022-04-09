@@ -15,8 +15,7 @@ enum AppFlow {
     var viewController: UIViewController {
         switch self {
         case  .splash:
-            let vc = UIViewController()
-            vc.view.backgroundColor = .red
+            let vc = TweetView()
             return vc
         case  .main: return UIViewController()
         }

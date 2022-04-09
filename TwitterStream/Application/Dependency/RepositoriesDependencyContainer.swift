@@ -12,4 +12,8 @@ final class RepositoriesDependencyContainer {
     init(client: APIClient = APIClientImp()) {
         self.client = client
     }
+    
+    var serchNetwork: FilterNetworkRepository {
+        FilterNetworkRepository(client: client)
+    }
 }

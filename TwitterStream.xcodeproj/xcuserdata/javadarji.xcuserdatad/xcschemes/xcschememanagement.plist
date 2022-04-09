@@ -7,7 +7,25 @@
 		<key>TwitterStream.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>692F543B27FDC0B600882E72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>692F545127FDC0B800882E72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>692F545B27FDC0B800882E72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

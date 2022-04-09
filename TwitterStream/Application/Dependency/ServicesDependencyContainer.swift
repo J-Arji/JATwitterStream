@@ -8,4 +8,9 @@
 import Foundation
 final class ServicesDependencyContainer {
     private lazy var repositories = RepositoriesDependencyContainer()
+    
+    var search: FilterService {
+        FilterServiceImp(network: repositories.serchNetwork)
+    }
+    
 }

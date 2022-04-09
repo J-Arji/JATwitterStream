@@ -6,6 +6,6 @@ target 'TwitterStream' do
 
   # Pods for TwitterStream
   pod 'Alamofire'
-  pod 'RxSwift'
-  pod 'RxCocoa'
+
+  
 end

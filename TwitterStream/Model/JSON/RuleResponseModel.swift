@@ -7,14 +7,17 @@
 
 import Foundation
 struct RulesResponseModel: Codable {
-    let data: [RuleModel]
-    
+    let data: [RuleModel]?
+    let meta: Meta?
 }
 
 struct RuleModel: Codable {
     let id: String
     let value: String?
-    let tag: String?
+    var tag: String?
 }
 
-
+struct Meta: Codable {
+    var sent: String?
+    var result: Int?
+}
