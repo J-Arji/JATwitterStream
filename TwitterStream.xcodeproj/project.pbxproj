@@ -18,6 +18,7 @@
 		6959B4202801AB960071EA40 /* DeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B41F2801AB960071EA40 /* DeleteModel.swift */; };
 		6959B4222801ABAB0071EA40 /* Encodable+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B4212801ABAB0071EA40 /* Encodable+Extention.swift */; };
 		6959B4252801AD010071EA40 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B4242801AD010071EA40 /* DynamicValue.swift */; };
+		6959B4272801B0DD0071EA40 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B4262801B0DD0071EA40 /* DataSource.swift */; };
 		6985A8E927FEA113009E1993 /* AppFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985A8E827FEA113009E1993 /* AppFlowDelegate.swift */; };
 		6985A8EC27FEA52F009E1993 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985A8EB27FEA52F009E1993 /* NetworkRouter.swift */; };
 		6985A8F027FEAB72009E1993 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985A8EF27FEAB72009E1993 /* DependencyContainer.swift */; };
@@ -74,6 +75,7 @@
 		6959B41F2801AB960071EA40 /* DeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteModel.swift; sourceTree = "<group>"; };
 		6959B4212801ABAB0071EA40 /* Encodable+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extention.swift"; sourceTree = "<group>"; };
 		6959B4242801AD010071EA40 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		6959B4262801B0DD0071EA40 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		6985A8E827FEA113009E1993 /* AppFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowDelegate.swift; sourceTree = "<group>"; };
 		6985A8EB27FEA52F009E1993 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		6985A8EF27FEAB72009E1993 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				6985A8EB27FEA52F009E1993 /* NetworkRouter.swift */,
 				699B31FF27FF674300456282 /* ReusableView.swift */,
 				699B320127FF677600456282 /* StoryboardBased.swift */,
+				6959B4262801B0DD0071EA40 /* DataSource.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				6959B4222801ABAB0071EA40 /* Encodable+Extention.swift in Sources */,
 				69E78BE62800B59000812745 /* TweetView.swift in Sources */,
 				6959B41E2801AB820071EA40 /* AddModel.swift in Sources */,
+				6959B4272801B0DD0071EA40 /* DataSource.swift in Sources */,
 				69E78BF22800BF9D00812745 /* FeedResponseModel.swift in Sources */,
 				699B321327FF8AA900456282 /* Delete.swift in Sources */,
 				699B320527FF67E600456282 /* FilterNetworkRepository.swift in Sources */,

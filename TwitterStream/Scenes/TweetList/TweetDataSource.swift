@@ -5,37 +5,40 @@
 //  Created by javad Arji on 4/8/22.
 //
 
-import RxDataSources
+import UIKit
 
-enum TableViewSection {
-    case CustomeSection(items: [TweetInterface])
+
+class TweetDataSource: TableDataSource<TweetTableViewItem>, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        data.value.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         data.value[indexPath.row].cell(from: tableView, for: indexPath)
+    }
+
     
 }
-
-
-extension TableViewSection: SectionModelType {
-    var items: [TweetInterface] {
+enum TweetTableViewItem {
+    case TweetCell(model: TweetInterface)
+    
+    func cell(from tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         switch self {
-        case let .CustomeSection(data):
-            return data
+        case let .TweetCell(items):
+            let cell: TweetTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.set(data: items)
+            return cell
         }
     }
     
-    typealias Item = TweetInterface
-    
-    init(original: Self, items: [Self.Item]) {
-        self = original
-    }
-}
-
-struct TweetDataSource {
-    typealias DataSource = RxTableViewSectionedReloadDataSource
-    
-    static func dataSource() -> DataSource<TableViewSection> {
-        return .init(configureCell: { dataSource, tableView, indexPath, item -> UITableViewCell in
-            let cell = UITableViewCell()
-            //            cell.viewModel = IntermediateItemViewModel(itemModel: item)
-            return cell
-        })
+    func itemValue() -> TweetInterface {
+        switch self {
+        case let .TweetCell(model: data):
+            return data
+        }
     }
 }
