@@ -21,17 +21,3 @@ struct Config {
     }
 }
 
-struct TwitterServiceConstants {
-    struct RequestParamKeys {
-        static let add = "add"
-        static let tag = "tag"
-        static let value = "value"
-        static let ids = "ids"
-    }
-
-    struct RequestParamValues {
-        static let sample = "has:images"
-    }
-}
-
-
