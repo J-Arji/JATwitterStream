@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class TweetView: UIViewController {
+class TweetView: UIViewController, ModalProtocol {
     //MARK: -
     private lazy var tableView: UITableView = {
         let tableView = UITableView()

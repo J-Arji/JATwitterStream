@@ -34,8 +34,7 @@ class TweetViewModel {
         self.service = service
         self.dataSource = dataSource
     }
-    
-    
+
 }
 
 extension TweetViewModel {
