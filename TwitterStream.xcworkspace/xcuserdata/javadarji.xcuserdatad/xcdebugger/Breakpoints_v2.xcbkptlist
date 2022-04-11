@@ -7,80 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B08E2ED2-1EFE-4BAC-8B73-1EBE2CB9E7B8"
+            uuid = "F6AD2A73-8B73-4D5A-8961-375E4A1960DA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TwitterStream/Scenes/TweetList/TweetViewModel.swift"
+            filePath = "TwitterStream/Scenes/TweetList/TweetView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "checkResult(with:)"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "reload()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5A451CFE-56BE-4A75-9B68-EB55F5269B91"
+            uuid = "E610008C-B5BA-401B-B0CF-0DA26AD42CCB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TwitterStream/Scenes/TweetList/TweetViewModel.swift"
+            filePath = "TwitterStream/Scenes/TweetList/TweetDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "addRules()"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BCCE40E8-FBAA-4EED-9317-C77D434DB2A0"
+            uuid = "0AAA350A-9238-4977-A2CD-AD6CDC022FB0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TwitterStream/Service/FilterService.swift"
+            filePath = "TwitterStream/Scenes/TweetList/TweetDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "deleteRules(with:completion:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "cell(from:for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2B5C51B0-CDC7-4937-A977-E64812E82895"
+            uuid = "68EC62A8-6DC9-4A1F-B28F-D7D974049612"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TwitterStream/DataAccess/APIClient.swift"
+            filePath = "TwitterStream/Scenes/TweetList/TweetView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "request(_:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "58FAAA18-EF00-4CC3-88F0-29EBFB0641DB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TwitterStream/DataAccess/APIClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "request(_:completion:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "bindIndicatorView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

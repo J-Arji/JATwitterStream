@@ -42,7 +42,6 @@ class APIClientImp: APIClient {
             return
         }
         let request = sessionManager.request(urlRequest)
-
         request
             .validate()
             .cURLDescription {
@@ -67,8 +66,12 @@ class APIClientImp: APIClient {
             completion(.failure(ClientError.noNetworkConnectivity))
         }
         cancelTask()
+        guard let urlRequest = try? endpoint.asURLRequest() else {
+            completion(.failure(ClientError.custom(detail: "have problem")))
+            return
+        }
         
-        self.sessionManager.streamRequest(endpoint)
+        AF.streamRequest(urlRequest)
             .validate()
             .cURLDescription {
                 debugPrint("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")

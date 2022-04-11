@@ -17,7 +17,6 @@ struct Config {
     
     struct Endpoint {
          let rules = "/rules"
-         let connectStream = "?tweet.fields=created_at&expansions=author_id,geo.place_id&user.fields=created_at&place.fields=contained_within,country,full_name,geo,id,name,place_type"
+         let connectStream = "?tweet.fields=created_at,author_id"
     }
 }
-

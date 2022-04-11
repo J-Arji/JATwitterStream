@@ -6,6 +6,6 @@ target 'TwitterStream' do
 
   # Pods for TwitterStream
   pod 'Alamofire'
+  pod 'DifferenceKit'
 
-  
 end

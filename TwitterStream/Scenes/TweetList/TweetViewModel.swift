@@ -6,34 +6,51 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+import Alamofire
+
+protocol ViewModelInterFace {
+    var error:  DynamicValue<String?> { get set }
+    var isLoading: DynamicValue<Bool?> { get set }
+    func startLoading()
+    func stopLoading()
+    func show(message: String)
+    func fetchData()
+}
 
 class TweetViewModel {
     private var service: FilterService
-    public var isLoading = BehaviorRelay<Bool>(value: false)
-    public var error = PublishRelay<String>()
-    public let items = BehaviorSubject<[TableViewSection]>(value: [])
-    private(set) var disposeBag = DisposeBag()
-    private(set) var text: String? = "javad"
-    
-    init(service: FilterService = DependencyContainer.shared.services.search) {
-        self.service = service
+    public var text: String?{
+        didSet {
+            self.getRuls()
+        }
     }
+    private var dataSource: TableDataSource<TweetItem>
+    public var error = DynamicValue<String?>(nil)
+    public var isLoading = DynamicValue<Bool?>(nil)
+    public var reload: (() -> Void)?
+    public var reloadItems: ((_ row: Int) -> Void)?
+    
+    init(dataSource:TableDataSource<TweetItem>, service: FilterService = DependencyContainer.shared.services.search) {
+        self.service = service
+        self.dataSource = dataSource
+    }
+    
     
 }
 
 extension TweetViewModel {
-    
+    /**
+     Check if there is a rule
+     */
     public func getRuls() {
-        self.isLoading.accept(true)
+        self.dataSource.data.value = []
+        self.startLoading()
         service.getRules { [self] result in
-//            guard let self = self else { return }
             switch result {
             case let .success(data):
                 self.checkResult(with: data)
                 print(data)
-
+                
             case let .failure(error):
                 self.show(message: error.localizedDescription)
             }
@@ -41,7 +58,6 @@ extension TweetViewModel {
     }
     
     private func checkResult(with rules: RulesResponseModel) {
-        print(rules)
         guard let rules = rules.data, !rules.isEmpty else {
             self.addRules()
             return
@@ -57,56 +73,71 @@ extension TweetViewModel {
     private func deleteRules(ids: [String]) {
         service.deleteRules(with: ids) { [self] result in
             switch result {
-            case let .success(data):
-                print(data)
+            case  .success(_):
                 self.addRules()
-
+                
             case let .failure(error):
                 self.show(message: error.localizedDescription)
-
+                
             }
         }
-
+        
     }
-    
+    /**
+     add the rule for stream in real time
+     */
     private func addRules(){
         guard let text = text else { return }
         service.addRule(keyword: text) { [self] result in
+            DispatchQueue.main.async {
+                self.stopLoading()
+            }
             switch result {
             case .success(_):
-                self.fetchTweet()
-
+                self.fetchData()
+                
             case let .failure(error):
                 self.show(message: error.localizedDescription)
-
             }
         }
     }
     
-    public func fetchTweet() {
+    /**
+     send query for fetch data
+     */
+    private func filterTweet(completion: @escaping (TweetItem) -> Void) {
         service.fetch { [ self] result in
             switch result {
-            case let .success(data):
-                self.convertData(model: data)
+            case let .success(tweet):
+                print(tweet)
+                let tweetItems =  TweetItem.TweetCell(model: tweet.data)
+                completion(tweetItems)
+                
             case let .failure(error):
                 self.show(message: error.localizedDescription)
-
             }
         }
-
-    }
-    
-    private func convertData(model: [FeedResponseModel]){
-        let section = TableViewSection.CustomeSection(items: model.map { $0.feed })
-        self.items.onNext([section])
-    }
-    
-    private func stopLoading() {
-        self.isLoading.accept(false)
-    }
-    private func show(message: String) {
-        stopLoading()
-        self.error.accept(message)
     }
 }
 
+
+extension TweetViewModel: ViewModelInterFace {
+    
+    internal func fetchData() {
+        filterTweet { [weak self] tweet in
+            guard let self = self else { return }
+            self.dataSource.data.value.insert(tweet, at: 0)
+            self.reload?()
+        }
+    }
+    
+    internal func startLoading() {
+        self.isLoading.value = true
+    }
+    internal func stopLoading() {
+        self.isLoading.value = false
+    }
+    internal func show(message: String) {
+        self.error.value = message
+    }
+}

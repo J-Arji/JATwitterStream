@@ -9,32 +9,17 @@ import Foundation
 
 protocol TweetInterface {
     var text: String? { get }
-
-}
-struct FeedResponseModel: Codable {
-    let feed: FeedModel
-
-    enum CodingKeys: String, CodingKey {
-        case feed = "data"
-    }
 }
 
-struct FeedModel: Codable {    
+struct Tweet: Codable {
+    let data: DataTweet
+}
+
+struct DataTweet: Codable {
     
-    let feedId: String
+    let author_id: String?
+    let created_at: String
+    let id: String?
     let text: String?
-    let geo: FeedGeoModel?
-
-    enum CodingKeys: String, CodingKey {
-        case feedId = "id"
-        case text
-        case geo
-    }
 }
-extension FeedModel: TweetInterface {}
-
-struct FeedGeoModel: Codable {
-    let type: String?
-    let coordinates: [Double]?
-}
-
+extension DataTweet: TweetInterface {}

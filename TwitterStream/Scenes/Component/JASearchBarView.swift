@@ -13,10 +13,11 @@ class JASearchBarView: UIView {
         let searchBar = UITextField()
         searchBar.delegate = self
         searchBar.placeholder = "Search"
+        searchBar.returnKeyType = .done
         return searchBar
     }()
 
-    public var keyword: String?
+    public var keyword: ((String?) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,8 +31,8 @@ class JASearchBarView: UIView {
     }
 
     private func setUpViews() {
-        // search bar has 8px padding from right and left 12 + 8 = 20
-        searchBar.fillSuperview(padding: .init(top: 0, left: 12, bottom: 0, right: 12))
+        // search bar has 8px padding from right and left
+        searchBar.fillSuperview(padding: .init(top: 0, left: 8, bottom: 0, right: 8))
         
     
         backgroundColor = .black
@@ -40,6 +41,14 @@ class JASearchBarView: UIView {
 }
 
 extension JASearchBarView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.keyword?(textField.text)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return true
+    }
+
     
 }
-

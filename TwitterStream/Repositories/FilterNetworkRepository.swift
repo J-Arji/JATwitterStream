@@ -10,7 +10,7 @@ import Alamofire
 
 typealias RuleResponseOutput = ((Result<RulesResponseModel, ClientError>) -> Void)
 typealias DeleteRuleResponseOutput = ((Result<DeleteRuleResponse, ClientError>) -> Void)
-typealias FeedResponseModelOutput = ((Result<[FeedResponseModel], ClientError>) -> Void)
+typealias FeedResponseModelOutput = ((Result<Tweet, ClientError>) -> Void)
 
 struct FilterNetworkRepository {
     private let client: APIClient
@@ -65,7 +65,7 @@ extension FilterNetworkRepository {
             }
         }
         
-        var headers: [String: String]? {
+        var headers: HTTPHeaders? {
             return ["Authorization" : "Bearer \(Config.shared.bearerToken)"]
         }
         

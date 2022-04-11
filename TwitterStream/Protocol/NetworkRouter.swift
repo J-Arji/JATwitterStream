@@ -13,7 +13,7 @@ protocol NetworkRouter: URLRequestConvertible {
     var baseURLString: String { get }
     var method: HTTPMethod { get }
     var path: String { get }
-    var headers:  [String: String]?{ get }
+    var headers:  HTTPHeaders?{ get }
     var params: [String: Any]? { get }
     var encoding: ParameterEncoding {get }
     func asURLRequest() throws -> URLRequest
@@ -38,7 +38,7 @@ extension NetworkRouter {
     }
 
     // Set header here
-    var headers: [String: String]? {
+    var headers: HTTPHeaders? {
         return [:]
     }
     // Set encoding for each APIs
@@ -59,7 +59,7 @@ extension NetworkRouter {
         let url = URL(string: baseURLString.appending(path))
         var urlRequest = URLRequest(url: url!)
         urlRequest.httpMethod = method.rawValue.uppercased()
-        urlRequest.allHTTPHeaderFields = headers
+        urlRequest.allHTTPHeaderFields = headers?.dictionary
         urlRequest.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         
         if method == .get {

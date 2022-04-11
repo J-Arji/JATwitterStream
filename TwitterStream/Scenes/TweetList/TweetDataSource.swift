@@ -8,8 +8,8 @@
 import UIKit
 
 
-class TweetDataSource: TableDataSource<TweetTableViewItem>, UITableViewDataSource {
-
+class TweetDataSource: TableDataSource<TweetItem>, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -18,12 +18,11 @@ class TweetDataSource: TableDataSource<TweetTableViewItem>, UITableViewDataSourc
         data.value.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         data.value[indexPath.row].cell(from: tableView, for: indexPath)
+        data.value[indexPath.row].cell(from: tableView, for: indexPath)
     }
-
-    
 }
-enum TweetTableViewItem {
+
+enum TweetItem {
     case TweetCell(model: TweetInterface)
     
     func cell(from tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {

@@ -19,6 +19,8 @@
 		6959B4222801ABAB0071EA40 /* Encodable+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B4212801ABAB0071EA40 /* Encodable+Extention.swift */; };
 		6959B4252801AD010071EA40 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B4242801AD010071EA40 /* DynamicValue.swift */; };
 		6959B4272801B0DD0071EA40 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B4262801B0DD0071EA40 /* DataSource.swift */; };
+		6959B4292801BE6E0071EA40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B4282801BE6E0071EA40 /* ViewController.swift */; };
+		6959B42D2801C0DC0071EA40 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959B42C2801C0DC0071EA40 /* LoadingView.swift */; };
 		6985A8E927FEA113009E1993 /* AppFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985A8E827FEA113009E1993 /* AppFlowDelegate.swift */; };
 		6985A8EC27FEA52F009E1993 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985A8EB27FEA52F009E1993 /* NetworkRouter.swift */; };
 		6985A8F027FEAB72009E1993 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985A8EF27FEAB72009E1993 /* DependencyContainer.swift */; };
@@ -76,6 +78,8 @@
 		6959B4212801ABAB0071EA40 /* Encodable+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extention.swift"; sourceTree = "<group>"; };
 		6959B4242801AD010071EA40 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
 		6959B4262801B0DD0071EA40 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		6959B4282801BE6E0071EA40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6959B42C2801C0DC0071EA40 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		6985A8E827FEA113009E1993 /* AppFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowDelegate.swift; sourceTree = "<group>"; };
 		6985A8EB27FEA52F009E1993 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		6985A8EF27FEAB72009E1993 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				699B31FF27FF674300456282 /* ReusableView.swift */,
 				699B320127FF677600456282 /* StoryboardBased.swift */,
 				6959B4262801B0DD0071EA40 /* DataSource.swift */,
+				6959B4282801BE6E0071EA40 /* ViewController.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				69E78BE82800B7BC00812745 /* JASearchBarView.swift */,
+				6959B42C2801C0DC0071EA40 /* LoadingView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -532,12 +538,14 @@
 				6985A8E927FEA113009E1993 /* AppFlowDelegate.swift in Sources */,
 				699B320C27FF6CE900456282 /* Config.swift in Sources */,
 				699B320027FF674300456282 /* ReusableView.swift in Sources */,
+				6959B4292801BE6E0071EA40 /* ViewController.swift in Sources */,
 				6959B4252801AD010071EA40 /* DynamicValue.swift in Sources */,
 				6959B4202801AB960071EA40 /* DeleteModel.swift in Sources */,
 				699B320927FF69B100456282 /* RuleResponseModel.swift in Sources */,
 				692F544027FDC0B600882E72 /* AppDelegate.swift in Sources */,
 				6959B41C280154A20071EA40 /* TweetTableViewCell.swift in Sources */,
 				69E78BEC2800B90600812745 /* UIView+NSLayoutConstraints.swift in Sources */,
+				6959B42D2801C0DC0071EA40 /* LoadingView.swift in Sources */,
 				6985A8F027FEAB72009E1993 /* DependencyContainer.swift in Sources */,
 				6985A8F427FEABAC009E1993 /* ServicesDependencyContainer.swift in Sources */,
 				6985A8EC27FEA52F009E1993 /* NetworkRouter.swift in Sources */,
