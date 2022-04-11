@@ -66,14 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		692F543C27FDC0B600882E72 /* TwitterStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		692F543C27FDC0B600882E72 /* JATwitterStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JATwitterStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		692F543F27FDC0B600882E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		692F544827FDC0B800882E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		692F544B27FDC0B800882E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		692F544D27FDC0B800882E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		692F545227FDC0B800882E72 /* TwitterStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		692F545227FDC0B800882E72 /* JATwitterStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JATwitterStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		692F545627FDC0B800882E72 /* TwitterStreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStreamTests.swift; sourceTree = "<group>"; };
-		692F545C27FDC0B800882E72 /* TwitterStreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterStreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		692F545C27FDC0B800882E72 /* JATwitterStreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JATwitterStreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		692F546027FDC0B800882E72 /* TwitterStreamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStreamUITests.swift; sourceTree = "<group>"; };
 		692F546227FDC0B800882E72 /* TwitterStreamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStreamUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6959B41B280154A20071EA40 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,9 +154,9 @@
 		692F543D27FDC0B600882E72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				692F543C27FDC0B600882E72 /* TwitterStream.app */,
-				692F545227FDC0B800882E72 /* TwitterStreamTests.xctest */,
-				692F545C27FDC0B800882E72 /* TwitterStreamUITests.xctest */,
+				692F543C27FDC0B600882E72 /* JATwitterStream.app */,
+				692F545227FDC0B800882E72 /* JATwitterStreamTests.xctest */,
+				692F545C27FDC0B800882E72 /* JATwitterStreamUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,9 +369,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		692F543B27FDC0B600882E72 /* TwitterStream */ = {
+		692F543B27FDC0B600882E72 /* JATwitterStream */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 692F546627FDC0B800882E72 /* Build configuration list for PBXNativeTarget "TwitterStream" */;
+			buildConfigurationList = 692F546627FDC0B800882E72 /* Build configuration list for PBXNativeTarget "JATwitterStream" */;
 			buildPhases = (
 				0D2751BFEC57F9EB6368C5C1 /* [CP] Check Pods Manifest.lock */,
 				692F543827FDC0B600882E72 /* Sources */,
@@ -383,14 +383,14 @@
 			);
 			dependencies = (
 			);
-			name = TwitterStream;
+			name = JATwitterStream;
 			productName = TwitterStream;
-			productReference = 692F543C27FDC0B600882E72 /* TwitterStream.app */;
+			productReference = 692F543C27FDC0B600882E72 /* JATwitterStream.app */;
 			productType = "com.apple.product-type.application";
 		};
-		692F545127FDC0B800882E72 /* TwitterStreamTests */ = {
+		692F545127FDC0B800882E72 /* JATwitterStreamTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 692F546927FDC0B800882E72 /* Build configuration list for PBXNativeTarget "TwitterStreamTests" */;
+			buildConfigurationList = 692F546927FDC0B800882E72 /* Build configuration list for PBXNativeTarget "JATwitterStreamTests" */;
 			buildPhases = (
 				692F544E27FDC0B800882E72 /* Sources */,
 				692F544F27FDC0B800882E72 /* Frameworks */,
@@ -401,14 +401,14 @@
 			dependencies = (
 				692F545427FDC0B800882E72 /* PBXTargetDependency */,
 			);
-			name = TwitterStreamTests;
+			name = JATwitterStreamTests;
 			productName = TwitterStreamTests;
-			productReference = 692F545227FDC0B800882E72 /* TwitterStreamTests.xctest */;
+			productReference = 692F545227FDC0B800882E72 /* JATwitterStreamTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		692F545B27FDC0B800882E72 /* TwitterStreamUITests */ = {
+		692F545B27FDC0B800882E72 /* JATwitterStreamUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 692F546C27FDC0B800882E72 /* Build configuration list for PBXNativeTarget "TwitterStreamUITests" */;
+			buildConfigurationList = 692F546C27FDC0B800882E72 /* Build configuration list for PBXNativeTarget "JATwitterStreamUITests" */;
 			buildPhases = (
 				692F545827FDC0B800882E72 /* Sources */,
 				692F545927FDC0B800882E72 /* Frameworks */,
@@ -419,9 +419,9 @@
 			dependencies = (
 				692F545E27FDC0B800882E72 /* PBXTargetDependency */,
 			);
-			name = TwitterStreamUITests;
+			name = JATwitterStreamUITests;
 			productName = TwitterStreamUITests;
-			productReference = 692F545C27FDC0B800882E72 /* TwitterStreamUITests.xctest */;
+			productReference = 692F545C27FDC0B800882E72 /* JATwitterStreamUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -447,7 +447,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 692F543727FDC0B600882E72 /* Build configuration list for PBXProject "TwitterStream" */;
+			buildConfigurationList = 692F543727FDC0B600882E72 /* Build configuration list for PBXProject "JATwitterStream" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -460,9 +460,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				692F543B27FDC0B600882E72 /* TwitterStream */,
-				692F545127FDC0B800882E72 /* TwitterStreamTests */,
-				692F545B27FDC0B800882E72 /* TwitterStreamUITests */,
+				692F543B27FDC0B600882E72 /* JATwitterStream */,
+				692F545127FDC0B800882E72 /* JATwitterStreamTests */,
+				692F545B27FDC0B800882E72 /* JATwitterStreamUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -598,12 +598,12 @@
 /* Begin PBXTargetDependency section */
 		692F545427FDC0B800882E72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 692F543B27FDC0B600882E72 /* TwitterStream */;
+			target = 692F543B27FDC0B600882E72 /* JATwitterStream */;
 			targetProxy = 692F545327FDC0B800882E72 /* PBXContainerItemProxy */;
 		};
 		692F545E27FDC0B800882E72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 692F543B27FDC0B600882E72 /* TwitterStream */;
+			target = 692F543B27FDC0B600882E72 /* JATwitterStream */;
 			targetProxy = 692F545D27FDC0B800882E72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -807,7 +807,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitterStream.app/TwitterStream";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JATwitterStream.app/JATwitterStream";
 			};
 			name = Debug;
 		};
@@ -826,7 +826,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitterStream.app/TwitterStream";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JATwitterStream.app/JATwitterStream";
 			};
 			name = Release;
 		};
@@ -867,7 +867,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		692F543727FDC0B600882E72 /* Build configuration list for PBXProject "TwitterStream" */ = {
+		692F543727FDC0B600882E72 /* Build configuration list for PBXProject "JATwitterStream" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				692F546427FDC0B800882E72 /* Debug */,
@@ -876,7 +876,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		692F546627FDC0B800882E72 /* Build configuration list for PBXNativeTarget "TwitterStream" */ = {
+		692F546627FDC0B800882E72 /* Build configuration list for PBXNativeTarget "JATwitterStream" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				692F546727FDC0B800882E72 /* Debug */,
@@ -885,7 +885,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		692F546927FDC0B800882E72 /* Build configuration list for PBXNativeTarget "TwitterStreamTests" */ = {
+		692F546927FDC0B800882E72 /* Build configuration list for PBXNativeTarget "JATwitterStreamTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				692F546A27FDC0B800882E72 /* Debug */,
@@ -894,7 +894,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		692F546C27FDC0B800882E72 /* Build configuration list for PBXNativeTarget "TwitterStreamUITests" */ = {
+		692F546C27FDC0B800882E72 /* Build configuration list for PBXNativeTarget "JATwitterStreamUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				692F546D27FDC0B800882E72 /* Debug */,

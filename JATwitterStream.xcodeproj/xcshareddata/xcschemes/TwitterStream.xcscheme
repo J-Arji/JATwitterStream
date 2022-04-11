@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "692F543B27FDC0B600882E72"
                BuildableName = "TwitterStream.app"
-               BlueprintName = "TwitterStream"
-               ReferencedContainer = "container:TwitterStream.xcodeproj">
+               BlueprintName = "JATwitterStream"
+               ReferencedContainer = "container:JATwitterStream.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "692F545127FDC0B800882E72"
                BuildableName = "TwitterStreamTests.xctest"
-               BlueprintName = "TwitterStreamTests"
-               ReferencedContainer = "container:TwitterStream.xcodeproj">
+               BlueprintName = "JATwitterStreamTests"
+               ReferencedContainer = "container:JATwitterStream.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,8 +44,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "692F545B27FDC0B800882E72"
                BuildableName = "TwitterStreamUITests.xctest"
-               BlueprintName = "TwitterStreamUITests"
-               ReferencedContainer = "container:TwitterStream.xcodeproj">
+               BlueprintName = "JATwitterStreamUITests"
+               ReferencedContainer = "container:JATwitterStream.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,8 +66,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "692F543B27FDC0B600882E72"
             BuildableName = "TwitterStream.app"
-            BlueprintName = "TwitterStream"
-            ReferencedContainer = "container:TwitterStream.xcodeproj">
+            BlueprintName = "JATwitterStream"
+            ReferencedContainer = "container:JATwitterStream.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,8 +83,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "692F543B27FDC0B600882E72"
             BuildableName = "TwitterStream.app"
-            BlueprintName = "TwitterStream"
-            ReferencedContainer = "container:TwitterStream.xcodeproj">
+            BlueprintName = "JATwitterStream"
+            ReferencedContainer = "container:JATwitterStream.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

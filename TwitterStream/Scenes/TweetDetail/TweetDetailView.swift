@@ -22,6 +22,7 @@ class TweetDetailView: UIViewController, ModalProtocol {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .left
+        label.numberOfLines = 0
         return label
     }()
     
