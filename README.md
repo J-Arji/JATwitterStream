@@ -1,5 +1,4 @@
 # JATwitterStream
-<h1 align="center">TwitterStream</h1>
 
 display of tweets associated with keyword.
 This demo project is just an example of how to interact with a streaming API on an iOS project. Particularly, this demo takes use of the statuses streaming API Twitter
