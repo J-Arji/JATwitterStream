@@ -23,6 +23,8 @@ class TweetView: UIViewController , NavigationProtocol {
     private lazy var searchView: JASearchBarView = {
         let view = JASearchBarView()
         view.backgroundColor = .lightGray
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 8
         return view
     }()
     private lazy var loadingView: LoadingView = {
