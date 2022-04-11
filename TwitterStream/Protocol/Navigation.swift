@@ -11,3 +11,4 @@ protocol NavigationProtocol: AnyObject {
     func push(_ vc: UIViewController)
    
 }
+

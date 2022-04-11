@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct TweetDetailViewModel {
+    var tweet: TweetInterface
+    
+    init(tweet: TweetInterface) {
+        self.tweet = tweet
+    }
+}

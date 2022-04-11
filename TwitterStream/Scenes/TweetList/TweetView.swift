@@ -6,7 +6,8 @@
 //
 
 import UIKit
-class TweetView: UIViewController, ModalProtocol {
+class TweetView: UIViewController , NavigationProtocol {
+  
     //MARK: -
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -55,6 +56,10 @@ class TweetView: UIViewController, ModalProtocol {
         
         viewModel.reloadItems = { [weak self] row in
             self?.tableView.reloadData()
+        }
+        viewModel.present = { item in
+            guard let tweet = item else { return }
+            self.showDetailView(tweet: tweet)
         }
     }
     
@@ -105,6 +110,12 @@ class TweetView: UIViewController, ModalProtocol {
                          trailing: view.trailingAnchor,
                          padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
     }
+    
+    private func showDetailView(tweet: TweetInterface) {
+        let viewModel = TweetDetailViewModel(tweet: tweet)
+        let vc = TweetDetailView(viewModel: viewModel)
+        self.presentPanModal(vc)
+    }
 }
 
 extension TweetView {
@@ -117,5 +128,7 @@ extension TweetView {
 
 // MARK: - TableViewDelegate
 extension TweetView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.itemSelected(index: indexPath.row)
+    }
 }

@@ -29,6 +29,7 @@ class TweetViewModel {
     public var isLoading = DynamicValue<Bool?>(nil)
     public var reload: (() -> Void)?
     public var reloadItems: ((_ row: Int) -> Void)?
+    public var present: ((TweetInterface?) -> Void)?
     
     init(dataSource:TableDataSource<TweetItem>, service: FilterService = DependencyContainer.shared.services.search) {
         self.service = service
@@ -116,6 +117,10 @@ extension TweetViewModel {
             }
         }
     }
+    public func itemSelected(index: Int)  {
+         let tweet = dataSource.data.value[index].itemValue()
+        self.present?(tweet)
+    }    
 }
 
 

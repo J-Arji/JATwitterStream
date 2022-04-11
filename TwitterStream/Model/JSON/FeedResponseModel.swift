@@ -9,6 +9,7 @@ import Foundation
 
 protocol TweetInterface {
     var text: String? { get }
+    var author_id: String? { get }
 }
 
 struct Tweet: Codable {
