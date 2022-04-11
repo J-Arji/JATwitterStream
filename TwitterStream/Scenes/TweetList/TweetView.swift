@@ -92,6 +92,7 @@ class TweetView: UIViewController {
         tableView.dismissKeyboard()
         view.addSubview(searchView)
         view.addSubview(tableView)
+        view.add(loading: loadingView)
         searchView.anchor(top: view.topAnchor,
                           leading: view.leadingAnchor,
                           bottom: tableView.topAnchor,

@@ -113,8 +113,8 @@ extension TweetViewModel {
                 let tweetItems =  TweetItem.TweetCell(model: tweet.data)
                 completion(tweetItems)
                 
-            case let .failure(error):
-                self.show(message: error.localizedDescription)
+            case .failure(_):
+                break
             }
         }
     }
