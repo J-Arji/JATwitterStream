@@ -22,7 +22,7 @@ class TweetView: UIViewController , NavigationProtocol {
     }()
     private lazy var searchView: JASearchBarView = {
         let view = JASearchBarView()
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
         return view
     }()
     private lazy var loadingView: LoadingView = {

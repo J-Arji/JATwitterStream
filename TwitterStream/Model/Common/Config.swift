@@ -13,7 +13,7 @@ struct Config {
     var endpoint = Endpoint()
     init() { }
     let baseAddress = "https://api.twitter.com/2/tweets/search/stream"
-    let bearerToken = "AAAAAAAAAAAAAAAAAAAAAAFxbAEAAAAAtTxZJi8gt5J%2FMjOKj8BLeSDxECA%3DAb1gVhfbErajdWCgSJJMIWnhjPVqnKjOdFFmRiyxL6sO2pz455"
+    let bearerToken = "AAAAAAAAAAAAAAAAAAAAAAFxbAEAAAAABEtYJJrR1wvTGUOmA0KZL7mG1jU%3DSh17xDkduu7EpmKc0fLeLwpj3k9HnIZAGOE6DhwZAcSFuXp74q"
     
     struct Endpoint {
          let rules = "/rules"

@@ -8,9 +8,11 @@
 import Foundation
 
 struct TweetDetailViewModel {
-    var tweet: TweetInterface
+    public var tweet: TweetInterface
     
     init(tweet: TweetInterface) {
         self.tweet = tweet
     }
+    
+
 }
