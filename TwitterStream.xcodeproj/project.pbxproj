@@ -36,6 +36,7 @@
 		699B321127FF884300456282 /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B321027FF884300456282 /* FilterService.swift */; };
 		699B321327FF8AA900456282 /* Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B321227FF8AA900456282 /* Delete.swift */; };
 		69C2D134280481E80055CE13 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C2D133280481E80055CE13 /* Navigation.swift */; };
+		69C2D136280484020055CE13 /* ModalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C2D135280484020055CE13 /* ModalProtocol.swift */; };
 		69E78BE42800AF5200812745 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E78BE32800AF5200812745 /* TweetViewModel.swift */; };
 		69E78BE62800B59000812745 /* TweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E78BE52800B59000812745 /* TweetView.swift */; };
 		69E78BE92800B7BC00812745 /* JASearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E78BE82800B7BC00812745 /* JASearchBarView.swift */; };
@@ -96,6 +97,7 @@
 		699B321027FF884300456282 /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		699B321227FF8AA900456282 /* Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delete.swift; sourceTree = "<group>"; };
 		69C2D133280481E80055CE13 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		69C2D135280484020055CE13 /* ModalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProtocol.swift; sourceTree = "<group>"; };
 		69E78BE32800AF5200812745 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		69E78BE52800B59000812745 /* TweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetView.swift; sourceTree = "<group>"; };
 		69E78BE82800B7BC00812745 /* JASearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JASearchBarView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				6959B4262801B0DD0071EA40 /* DataSource.swift */,
 				6959B4282801BE6E0071EA40 /* ViewController.swift */,
 				69C2D133280481E80055CE13 /* Navigation.swift */,
+				69C2D135280484020055CE13 /* ModalProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				6959B41E2801AB820071EA40 /* AddModel.swift in Sources */,
 				6959B4272801B0DD0071EA40 /* DataSource.swift in Sources */,
 				69E78BF22800BF9D00812745 /* FeedResponseModel.swift in Sources */,
+				69C2D136280484020055CE13 /* ModalProtocol.swift in Sources */,
 				699B321327FF8AA900456282 /* Delete.swift in Sources */,
 				699B320527FF67E600456282 /* FilterNetworkRepository.swift in Sources */,
 				6985A8F227FEAB93009E1993 /* RepositoriesDependencyContainer.swift in Sources */,

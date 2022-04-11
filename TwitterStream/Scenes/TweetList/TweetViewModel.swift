@@ -106,13 +106,12 @@ extension TweetViewModel {
      send query for fetch data
      */
     private func filterTweet(completion: @escaping (TweetItem) -> Void) {
-        service.fetch { [ self] result in
+        service.fetch { result in
             switch result {
             case let .success(tweet):
                 print(tweet)
                 let tweetItems =  TweetItem.TweetCell(model: tweet.data)
                 completion(tweetItems)
-                
             case .failure(_):
                 break
             }
