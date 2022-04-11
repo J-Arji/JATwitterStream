@@ -98,7 +98,7 @@ class TweetView: UIViewController , NavigationProtocol {
         view.addSubview(searchView)
         view.addSubview(tableView)
         view.add(loading: loadingView)
-        searchView.anchor(top: view.topAnchor,
+        searchView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                           leading: view.leadingAnchor,
                           bottom: tableView.topAnchor,
                           trailing: view.trailingAnchor,
@@ -106,7 +106,7 @@ class TweetView: UIViewController , NavigationProtocol {
         searchView.constrainHeight(constant: 40)
         tableView.anchor(top: nil,
                          leading: view.leadingAnchor,
-                         bottom: view.bottomAnchor,
+                         bottom: view.safeAreaLayoutGuide.bottomAnchor,
                          trailing: view.trailingAnchor,
                          padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
     }
@@ -114,7 +114,7 @@ class TweetView: UIViewController , NavigationProtocol {
     private func showDetailView(tweet: TweetInterface) {
         let viewModel = TweetDetailViewModel(tweet: tweet)
         let vc = TweetDetailView(viewModel: viewModel)
-        self.presentPanModal(vc)
+        self.presentModal(vc)
     }
 }
 

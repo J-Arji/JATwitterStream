@@ -15,7 +15,7 @@ enum AppFlow {
     var viewController: UIViewController {
         switch self {
         case  .splash:
-            let vc = TweetView()
+            let vc = UINavigationController(rootViewController: TweetView())  
             return vc
         case  .main: return UIViewController()
         }
